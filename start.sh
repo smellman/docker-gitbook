@@ -19,6 +19,8 @@ case "$1" in
     ;;
   build)
     gitbook build $GITBOOK_DIR $BUILD_DIR
+    rm -fr $GITBOOK_DIR/_book
+    cp -fr $BUILD_DIR/ $GITBOOK_DIR/_book
     ;;
   pdf)
     gitbook pdf $GITBOOK_DIR $GITBOOK_DIR/book.pdf
